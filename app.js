@@ -107,6 +107,8 @@ function attachRealtimeListeners(uid) {
     where('userId', '==', uid),
     orderBy('createdAt', 'desc')
   );
+
+  console.log(aq)
   unsubAnnoy = onSnapshot(aq, (snap) => {
     annoyList.innerHTML = '';
     snap.forEach((d) => renderAnnoyItem(d.id, d.data()));
