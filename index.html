@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Annoyed Student – Vanilla JS + Firestore</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+<h1>Annoyed Student</h1>
+<div id="authBox">
+<button id="signInBtn" class="btn">Sign in with Google</button>
+<div id="userInfo" class="hidden">
+<span id="userEmail"></span>
+<button id="signOutBtn" class="btn secondary">Sign out</button>
+</div>
+</div>
+</header>
+
+
+<main id="app" class="container hidden">
+<section class="panel">
+<h2>Log an annoyance</h2>
+<form id="annoyForm" class="grid">
+<input id="annoyText" placeholder="What did they do this time?" required />
+<label>
+Level
+<select id="annoyLevel">
+<option value="1">1 (meh)</option>
+<option value="2">2</option>
+<option value="3" selected>3</option>
+<option value="4">4</option>
+<option value="5">5 (MAX RAGE)</option>
+</select>
+</label>
+<button class="btn" type="submit">Add</button>
+<button id="annoyCancelEdit" type="button" class="btn secondary hidden">Cancel edit</button>
+</form>
+<ul id="annoyList" class="list"></ul>
+</section>
+
+
+<section class="panel">
+<h2>Homework</h2>
+<form id="hwForm" class="grid">
+<input id="hwTitle" placeholder="Assignment title" required />
+<input id="hwDue" type="date" />
+<select id="hwStatus">
+<option value="todo" selected>Todo</option>
+<option value="doing">Doing</option>
+<option value="done">Done</option>
+</select>
+<input id="hwNotes" placeholder="Notes (optional)" />
+<button class="btn" type="submit">Add</button>
+<button id="hwCancelEdit" type="button" class="btn secondary hidden">Cancel edit</button>
+</form>
+<ul id="hwList" class="list"></ul>
+</section>
+</main>
+
+
+<!-- Firebase (ESM CDN) -->
+<script type="module" src="app.js"></script>
+</body>
+</html>
